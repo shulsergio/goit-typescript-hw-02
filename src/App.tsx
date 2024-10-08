@@ -20,6 +20,13 @@ interface PhotoItem {
   };
 alt_description: string; 
 }
+  
+//   interface ImageModalProps {
+  // urlModal: string;
+  // altModal: string;
+  // modalIsOpen: boolean;
+  // closeModal: ()=>void;
+// }
 
 
   const [query, setQuery] = useState<string>('');
@@ -39,7 +46,7 @@ alt_description: string;
     if (!query) {
       return;
     }
-    const fetchData = async () => {
+    const fetchData = async (): Promise<void> => {
 
       setLoading(true);
       setError(null);
