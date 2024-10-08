@@ -1,6 +1,22 @@
 import css from "./ImageCard.module.css";
 
-export default function ImageCard({ photo, openModal }) {
+interface PhotoImg{
+  id: string; 
+  urls: {
+    regular: string;
+    small: string;
+  };
+alt_description: string; 
+}
+
+interface ImageCardProps{
+    photo: PhotoImg;
+    openModal:(regular:string, alt:string)=> void;
+}
+
+
+
+const ImageCard: React.FC<ImageCardProps>= ({ photo, openModal }) => {
     const regular = photo.urls.regular;
     // console.log('Regular URL:', regular); 
 
@@ -15,3 +31,4 @@ export default function ImageCard({ photo, openModal }) {
         </div>
     );
 }
+export default ImageCard;

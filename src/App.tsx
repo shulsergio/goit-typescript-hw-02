@@ -14,8 +14,11 @@ function App() {
 
 interface PhotoItem {
   id: string; 
-  regular: string;
-  alt: string; 
+  urls: {
+    regular: string;
+    small: string;
+  };
+alt_description: string; 
 }
 
 
