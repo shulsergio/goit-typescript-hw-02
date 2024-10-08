@@ -1,9 +1,6 @@
 import axios from "axios";
 
-
-
-
-export const fetchPhotoItems = async (query, page, per_page) => {
+export const fetchPhotoItems = async (query:string, page:number, per_page:number) => {
   const API_KEY = "U1Wt50lW9bzbJ485fV009LGdn7vFKmeUQOL9HQ_zluE";
 
   const { data } = await axios.get(

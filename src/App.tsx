@@ -25,7 +25,7 @@ interface PhotoItem {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [empty, setEmpty] = useState<boolean>(false);
-const [visible, setVisible] = useState<boolean>(false)
+  const [visible, setVisible] = useState<boolean>(false)
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [itemModal, setItemModal] = useState<string>("");
   const [altModal, setaltModal] = useState<string>("");

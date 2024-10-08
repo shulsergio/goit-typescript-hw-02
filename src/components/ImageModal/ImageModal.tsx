@@ -3,7 +3,15 @@ import css from './ImageModal.module.css';
 
 Modal.setAppElement("#root");
 
-export default function ImageModal({ urlModal, altModal, modalIsOpen, closeModal }) {
+interface ImageModal{
+  urlModal: string;
+  altModal: string;
+  modalIsOpen: boolean;
+  closeModal: ()=>void;
+}
+
+
+const ImageModal: React.FC<ImageModal>=({ urlModal, altModal, modalIsOpen, closeModal }) =>{
   return (
     <Modal
       isOpen={modalIsOpen}
@@ -15,3 +23,4 @@ export default function ImageModal({ urlModal, altModal, modalIsOpen, closeModal
     </Modal>
   );
 }
+export default ImageModal;
