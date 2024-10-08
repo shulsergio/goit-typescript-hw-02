@@ -9,17 +9,10 @@ import ImageGallery from './components/ImageGallery/ImageGallery.jsx';
 import ImageModal from './components/ImageModal/ImageModal.jsx';
 import LoadMoreBtn from './components/LoadMoreBtn/LoadMoreBtn.jsx';
 import { fetchPhotoItems } from './components/Api/apiPhotos.js';
+import { PhotoItemProps } from './components/Api/types';
 
 function App() {
 
-interface PhotoItem {
-  id: string; 
-  urls: {
-    regular: string;
-    small: string;
-  };
-alt_description: string; 
-}
   
 //   interface ImageModalProps {
   // urlModal: string;
@@ -31,7 +24,7 @@ alt_description: string;
 
   const [query, setQuery] = useState<string>('');
   const [page, setPage] = useState<number>(1);
-  const [photos, setPhotos] = useState<PhotoItem[]>([]);
+  const [photos, setPhotos] = useState<PhotoItemProps[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [empty, setEmpty] = useState<boolean>(false);
@@ -56,7 +49,7 @@ try {
         if(!results.length){
           return setEmpty(true)
         } 
-  setPhotos((prevPhotos: PhotoItem[]) => [...prevPhotos, ...results]);
+  setPhotos((prevPhotos: PhotoItemProps[]) => [...prevPhotos, ...results]);
 
         setVisible(page*per_page < total);
 

@@ -1,16 +1,8 @@
+import { PhotoItemProps } from "../Api/types";
 import css from "./ImageCard.module.css";
 
-interface PhotoImg{
-  id: string; 
-  urls: {
-    regular: string;
-    small: string;
-  };
-alt_description: string; 
-}
-
 interface ImageCardProps{
-    photo: PhotoImg;
+    photo: PhotoItemProps;
     openModal:(regular:string, alt:string)=> void;
 }
 

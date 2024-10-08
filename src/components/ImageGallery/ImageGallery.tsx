@@ -1,14 +1,7 @@
+import { PhotoItemProps } from "../Api/types";
 import ImageCard from "../ImageCard/ImageCard";
 import css from "./ImageGallery.module.css";
 
-interface PhotoItemProps{
-  id: string; 
-  urls: {
-    regular: string;
-    small: string;
-  };
-alt_description: string; 
-}
 
 interface ImageGallery{
   photos: PhotoItemProps[];
